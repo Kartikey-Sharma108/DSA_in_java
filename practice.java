@@ -3,6 +3,21 @@ import java.util.Scanner;
 
 public class practice {
 
+    public static void insertions(int[] arr){
+        for (int i = 1; i < arr.length; i++) {
+            int j=i-1;
+            int key = arr[i];
+
+            while(j>=0 && arr[j] > key){
+                //keep swappnig
+                arr[j+1] = arr[j];
+                j--;
+            }
+           arr[j+1] = key;
+            
+        }
+    }
+
     public static void selections(int[] arr){
         for (int i = 0; i < arr.length - 1; i++) {
             int minIndex = i;
@@ -113,7 +128,8 @@ public class practice {
 
        int[] arr = {3,5,1,2,8};
     //    bubbles(arr);
-     selections(arr);
+    //  selections(arr);
+    insertions(arr);
        System.out.println(Arrays.toString(arr));
     }}
 

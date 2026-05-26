@@ -3,6 +3,22 @@ import java.util.Scanner;
 
 public class practice {
 
+    public static void selections(int[] arr){
+        for (int i = 0; i < arr.length - 1; i++) {
+            int minIndex = i;
+            for (int j = i+1; j < arr.length - 1; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            if (minIndex != i) {
+                int temp = arr[minIndex];
+                arr[minIndex] = arr[i];
+                arr[i] = temp;
+            }
+        }
+    }
+
     public static void bubbles(int[] arr){
            for (int i = 0; i < arr.length - 1; i++) {
              boolean swap = false;
@@ -96,7 +112,8 @@ public class practice {
 //             System.out.println(arr3[9]);
 
        int[] arr = {3,5,1,2,8};
-       bubbles(arr);
+    //    bubbles(arr);
+     selections(arr);
        System.out.println(Arrays.toString(arr));
     }}
 
